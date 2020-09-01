@@ -40,7 +40,7 @@
 						<password>Aug@2020</password>
 						<!-- Environment Parameter -->
 						<environment>Sandbox</environment>
-						<applicationName>demo-alloknew</applicationName>
+						<applicationName>demo-aloknew</applicationName>
 						<businessGroup>Alok</businessGroup>
 						<workerType>MICRO</workerType>
 					</cloudHubDeployment>
