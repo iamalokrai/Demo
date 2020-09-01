@@ -43,8 +43,9 @@
 						<applicationName>demo-aloknew</applicationName>
 						<businessGroup>Alok</businessGroup>
 						<workerType>MICRO</workerType>
+						<objectStoreV2>true</objectStoreV2>
 					</cloudHubDeployment>
-					<objectStoreV2>true</objectStoreV2>
+					
 				</configuration>
 			</plugin>
 		</plugins>
