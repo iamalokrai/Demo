@@ -40,7 +40,7 @@
 						<password>Aug@2020</password>
 						<!-- Environment Parameter -->
 						<environment>Sandbox</environment>
-						<applicationName>template-sys-api</applicationName>
+						<applicationName>demo</applicationName>
 						<businessGroup>Alok</businessGroup>
 						<workerType>Micro</workerType>
 					</cloudHubDeployment>
