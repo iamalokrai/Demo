@@ -33,14 +33,16 @@
 				<extensions>true</extensions>
 				<configuration>
 					<cloudHubDeployment>
+						<uri>https://anypoint.mulesoft.com</uri>
 						<muleVersion>4.3.0</muleVersion>
+						<!-- Deploy User Parameter -->
 						<username>aloknew</username>
 						<password>Aug@2020</password>
-						<applicationName>demo</applicationName>
+						<!-- Environment Parameter -->
 						<environment>Sandbox</environment>
+						<applicationName>template-sys-api</applicationName>
 						<businessGroup>Alok</businessGroup>
 						<workerType>Micro</workerType>
-						<workers>1</workers>
 					</cloudHubDeployment>
 				</configuration>
 			</plugin>

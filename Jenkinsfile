@@ -1,31 +1,38 @@
 pipeline {
+
   agent any
+  environment {
+    //adding a comment for the commit test
+    DEPLOY_CREDS = credentials('deploy-anypoint-user')
+    MULE_VERSION = '4.3.0'
+    BG = "Alok"
+    WORKER = "Micro"
+  }
   stages {
-    stage('Unit Test') { 
+    stage('Build') {
       steps {
-        sh 'mvn clean test'
+            bat 'mvn -B -U -e -V clean -DskipTests package'
       }
     }
-    stage('Deploy Standalone') { 
+
+    stage('Test') {
       steps {
-        sh 'mvn deploy -P standalone'
+          bat "mvn test"
       }
     }
-    stage('Deploy ARM') { 
+
+     stage('Deploy Development') {
       environment {
-        ANYPOINT_CREDENTIALS = credentials('anypoint.credentials') 
+        ENVIRONMENT = 'Sandbox'
+        APP_NAME = 'demo'
       }
       steps {
-        sh 'mvn deploy -P arm -Darm.target.name=local-4.3.0-ee -Danypoint.username=${ANYPOINT_CREDENTIALS_USR}  -Danypoint.password=${ANYPOINT_CREDENTIALS_PSW}' 
+            bat 'mvn -U -V -e -B -DskipTests deploy -DmuleDeploy -Dmule.version="%MULE_VERSION%" -Danypoint.username="%DEPLOY_CREDS_USR%" -Danypoint.password="%DEPLOY_CREDS_PSW%" -Dcloudhub.app="%APP_NAME%" -Dcloudhub.environment="%ENVIRONMENT%" -Dcloudhub.bg="%BG%" -Dcloudhub.worker="%WORKER%"'
       }
     }
-    stage('Deploy CloudHub') { 
-      environment {
-        ANYPOINT_CREDENTIALS = credentials('anypoint.credentials')
-      }
-      steps {
-        sh 'mvn deploy -P cloudhub -Dmule.version=4.3.0 -Danypoint.username=${ANYPOINT_CREDENTIALS_USR} -Danypoint.password=${ANYPOINT_CREDENTIALS_PSW}' 
-      }
-    }
+  }
+
+  tools {
+    Maven 'M3'
   }
 }
