@@ -44,6 +44,7 @@
 						<businessGroup>Alok</businessGroup>
 						<workerType>MICRO</workerType>
 					</cloudHubDeployment>
+					<objectStoreV2>true</objectStoreV2>
 				</configuration>
 			</plugin>
 		</plugins>
