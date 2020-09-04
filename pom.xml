@@ -41,7 +41,7 @@
 						<password>${anypoint.password}</password>
 						<!-- Environment Parameter -->
 						<environment>${cloudhub.environment}</environment>
-						<applicationName>demo</applicationName>
+						<applicationName>demo-app</applicationName>
 						<businessGroup>${cloudhub.bg}</businessGroup>
 						<workerType>${cloudhub.worker}</workerType>
 						<objectStoreV2>true</objectStoreV2>
