@@ -21,7 +21,7 @@ pipeline {
       }
     }
 
-     stage('Deploy Development') {
+     stage('Dev Deployment') {
       environment {
         ENVIRONMENT = 'Sandbox'
         APP_NAME = 'demo'
