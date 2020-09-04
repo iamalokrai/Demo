@@ -41,9 +41,9 @@
 						<password>${anypoint.password}</password>
 						<!-- Environment Parameter -->
 						<environment>${cloudhub.environment}</environment>
-						<applicationName>demo-aloknew</applicationName>
-						<businessGroup>Alok</businessGroup>
-						<workerType>MICRO</workerType>
+						<applicationName>${cloudhub.app}</applicationName>
+						<businessGroup>${cloudhub.bg}</businessGroup>
+						<workerType>${cloudhub.worker}</workerType>
 						<objectStoreV2>true</objectStoreV2>
 					</cloudHubDeployment>
 

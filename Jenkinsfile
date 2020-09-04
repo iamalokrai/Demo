@@ -6,7 +6,7 @@ pipeline {
     DEPLOY_CREDS = credentials('deploy-anypoint-user')
     MULE_VERSION = '4.3.0'
     BG = "Alok"
-    WORKER = "Micro"
+    WORKER = "MICRO"
   }
   stages {
     stage('Build') {
