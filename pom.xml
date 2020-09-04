@@ -43,7 +43,7 @@
 						<environment>${cloudhub.environment}</environment>
 						<applicationName>demo-aloknew</applicationName>
 						<businessGroup>${cloudhub.bg}</businessGroup>
-						<workerType>MICRO</workerType>
+						<workerType>${cloudhub.worker}</workerType>
 						<objectStoreV2>true</objectStoreV2>
 					</cloudHubDeployment>
 
