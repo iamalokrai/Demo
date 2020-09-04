@@ -42,7 +42,7 @@
 						<!-- Environment Parameter -->
 						<environment>${cloudhub.environment}</environment>
 						<applicationName>demo-aloknew</applicationName>
-						<businessGroup>Alok</businessGroup>
+						<businessGroup>${cloudhub.bg}</businessGroup>
 						<workerType>MICRO</workerType>
 						<objectStoreV2>true</objectStoreV2>
 					</cloudHubDeployment>
