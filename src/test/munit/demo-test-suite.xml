@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="demo-test-suite.xml" />
+	<munit:test name="demo-test-suite-demoFlowTest" doc:id="0fcb63b6-c016-44d0-9f82-33d57d35a560" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to demoFlow" doc:id="6d46144a-195a-4807-86e7-2efce1f07b5c" name="demoFlow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-equals doc:name="Assert equals" doc:id="4a4fd5aa-3b67-4e68-a959-537d3bd24cea" actual='#[payload]' expected='"This is Demo App deployed via CI/CD Jenkins Pipeline"'/>
+			<munit-tools:verify-call doc:name="Verify call" doc:id="f7dc8d93-64b8-4b57-9527-6285486fbdca" processor="logger" atLeast="1">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Logger" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="e5dcdb53-de89-49c0-8d0e-755545419fa4" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+			</munit-tools:verify-call>
+		</munit:validation>
+	</munit:test>
+
+
+</mule>
