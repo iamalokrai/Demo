@@ -9,7 +9,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	</http:listener-config>
 	<flow name="demoFlow" doc:id="fa2d60a9-a970-4a82-b4d8-bd4110ea20f1" >
 		<http:listener doc:name="Listener" doc:id="06459642-3ca7-40a3-94e2-5aca62da644c" config-ref="HTTP_Listener_config" path="/demo"/>
-		<set-payload value='"This is Demo App deployed via CI/CD Jenkins Pipeline"' doc:name="Set Payload" doc:id="c7c085b7-852c-4551-8fd8-571b119b4e82" />
+		<set-payload value='"This is Demo App deployed via CI/CD Jenkins Pipeline from new branch"' doc:name="Set Payload" doc:id="c7c085b7-852c-4551-8fd8-571b119b4e82" />
 		<logger level="INFO" doc:name="Logger" doc:id="e5dcdb53-de89-49c0-8d0e-755545419fa4" message="#[payload]"/>
 	</flow>
 </mule>
