@@ -34,15 +34,23 @@
 				<configuration>
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
-						<muleVersion>4.3.0</muleVersion>
-						<!-- Deploy User Parameter -->
-						<authToken>${cloudhub.token}</authToken>
+						<muleVersion>${mule.version}</muleVersion>
 						<!-- Environment Parameter -->
 						<environment>${cloudhub.environment}</environment>
-						<applicationName>demo-Alok</applicationName>
+						<applicationName>${cloudhub.app}</applicationName>
 						<businessGroup>${cloudhub.bg}</businessGroup>
 						<workerType>${cloudhub.worker}</workerType>
+						<workers>${workers}</workers>
+						<authToken>${cloudhub.token}</authToken>
+						<region>${cloudhub.region}</region>
 						<objectStoreV2>true</objectStoreV2>
+						<properties>
+							<env>${env}</env>
+							<encKey>${encKey}</encKey>
+							<anypoint.platform.client_secret>${anypoint.platform.client_secret}</anypoint.platform.client_secret>
+							<anypoint.platform.client_id>${anypoint.platform.client_id}</anypoint.platform.client_id>
+							<anypoint.platform.config.analytics.agent.enabled>${analytics.enabled}</anypoint.platform.config.analytics.agent.enabled>
+						</properties>
 					</cloudHubDeployment>
 
 				</configuration>
