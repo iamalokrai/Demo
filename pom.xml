@@ -38,6 +38,7 @@
 						<!-- Deploy User Parameter -->
 						<username>${anypoint.username}</username>
 						<password>${anypoint.password}</password>
+						<authToken>${cloudhub.token}</authToken>
 						<!-- Environment Parameter -->
 						<environment>${cloudhub.environment}</environment>
 						<applicationName>demo-Alok</applicationName>
